@@ -1,0 +1,19 @@
+{
+  "name": "amplify-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && node --loader ts-node/esm ./backend.ts",
+    "sandbox": "ampx sandbox",
+    "deploy": "ampx deploy",
+    "delete": "ampx delete"
+  },
+  "dependencies": {
+    "@aws-amplify/backend": "latest",
+    "@aws-amplify/backend-cli": "latest",
+    "aws-cdk-lib": "^2.100.0",
+    "constructs": "^10.3.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}
