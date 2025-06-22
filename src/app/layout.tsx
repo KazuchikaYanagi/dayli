@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { IoHomeOutline } from "react-icons/io5";
+import { IoSend } from "react-icons/io5";
+import { MdOutlineWebAsset } from "react-icons/md";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +29,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased grid grid-cols-4 h-screen`}
       >
-        {children}
+        <nav className="col-span-1 bg-amber-200 px-8 py-10 flex flex-col gap-4">
+          <Link href={"/home"}>
+            <span className="flex items-center gap-2 text-lg font-semibold">
+              <IoHomeOutline /> home
+            </span>
+          </Link>
+          <Link href={"/about"}>
+            <span className="flex items-center gap-2 text-lg font-semibold">
+              <MdOutlineWebAsset />
+              about
+            </span>
+          </Link>
+          <Link href={"/post"}>
+            <span className="flex items-center gap-2 text-lg font-semibold">
+              <IoSend />
+              post
+            </span>
+          </Link>
+        </nav>
+        <main className="col-span-3 bg-red-100">{children}</main>
       </body>
     </html>
   );

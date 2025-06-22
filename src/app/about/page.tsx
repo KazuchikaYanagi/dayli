@@ -1,7 +1,7 @@
 import Image from "next/image";
-import heroImage from "../../public/dayli_main.jpg";
+import heroImage from "../../../public/dayli_main.jpg";
 
-export default function Home() {
+const About = () => {
   return (
     <Image
       src={heroImage}
@@ -10,4 +10,6 @@ export default function Home() {
       className="object-cover m-auto h-screen opacity-25"
     />
   );
-}
+};
+
+export default About;
